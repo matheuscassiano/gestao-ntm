@@ -1,0 +1,13 @@
+:host {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 12%;
+    align-items: center;
+    background: darkblue;
+    color: #ffffff;
+  }
+
+mat-icon{
+    font-size: 50px;
+}
