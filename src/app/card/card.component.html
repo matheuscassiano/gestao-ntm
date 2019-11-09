@@ -6,7 +6,9 @@
             <th>Email</th>
             <th>Competitions</th>
             <th>Phone</th>
+            <th>Date</th>
             <th>Status</th>
+            <th>Options</th>
         </tr>
         <tr *ngFor="let item of users;">
             <td>{{ item?.name }}</td>
@@ -14,7 +16,13 @@
             <td>{{ item?.email }}</td>
             <td>{{ item?.competencias }}</td>
             <td>{{ item?.phone }}</td>
-            <td>{{ item?.status }}</td>
+            <td>{{ item?.date_time }}</td>
+            <td *ngIf="item?.status == 0">Não Validado</td>
+            <td *ngIf="item?.status == 1">Validado</td>
+            <button (click)="validate(item?.cpf)" *ngIf="item?.status == 0">Validar</button>
+            <button mat-icon-button *ngIf="item?.status == 1">
+                <mat-icon>done_all</mat-icon>
+            </button>
         </tr>
     </table>
 </div>

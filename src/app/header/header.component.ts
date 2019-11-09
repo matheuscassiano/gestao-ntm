@@ -20,4 +20,7 @@ export class HeaderComponent implements OnInit {
   goToHome(){
     this.rota.navigateByUrl('/');
   }
+  goToRegister(){
+    this.rota.navigateByUrl('/registrar');
+  }
 }

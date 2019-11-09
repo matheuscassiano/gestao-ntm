@@ -19,14 +19,16 @@
 
         <mat-form-field>
             <input matInput appCpfMask placeholder="Enter CPF" formControlName="cpf" required>
-            <mat-error *ngIf="registerForm.get('cpf').errors && registerForm.get('cpf').touched">
+            <mat-error *ngIf="registerForm.get('cpf').errors && registerForm.get('cpf').touched && registerForm.get('cpf') in users.cpf">
                 {{registerForm.get('cpf').errors.message}}
             </mat-error>
         </mat-form-field>
 
         <mat-form-field>
-            <!--input matInput placeholder="Enter your competencias" formControlName="competencias" required-->
-            <mat-label>Skills</mat-label>
+            <textarea matInput placeholder="Enter skills in tags (3 in max)" formControlName="competencias" required>
+            Gerênciador de Projetos, Controle Financeiro, Controle de Estoque
+            </textarea>
+            <!--mat-label>Skills</mat-label>
             <mat-select multiple formControlName="competencias" required>
                 <mat-optgroup label="Swedish Cars">
                     <mat-option value="volvo">Volvo</mat-option>
@@ -34,14 +36,14 @@
                     <mat-option value="opel">Opel</mat-option>
                     <mat-option value="audi">Audi</mat-option>
                 </mat-optgroup>
-            </mat-select>
+            </mat-select-->
             <mat-error *ngIf="registerForm.get('competencias').errors && registerForm.get('competencias').touched">
                 {{registerForm.get('competencias').errors.message}}
             </mat-error>
         </mat-form-field>
 
         <mat-form-field>
-            <input matInput phoneMask placeholder="Enter your Phone" formControlName="phone" required>
+            <input matInput phoneMask placeholder="Enter your Phone" formControlName="phone">
             <mat-error *ngIf="registerForm.get('phone').errors && registerForm.get('phone').touched">
                 {{registerForm.get('phone').errors.message}}
             </mat-error>

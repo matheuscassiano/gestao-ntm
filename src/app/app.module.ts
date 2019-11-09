@@ -12,10 +12,11 @@ import { CustomMaterialModule } from './shared/custom-material.module';
 import { HeaderComponent } from './header/header.component';
 import { CardComponent } from './card/card.component';
 import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
-    AppComponent, PhoneMaskDirective, CpfMaskDirective, HeaderComponent, CardComponent, RegisterComponent
+    AppComponent, PhoneMaskDirective, CpfMaskDirective, HeaderComponent, CardComponent, RegisterComponent, LoginComponent
   ],
   imports: [
     BrowserModule,

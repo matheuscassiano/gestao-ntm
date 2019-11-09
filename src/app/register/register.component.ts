@@ -5,6 +5,7 @@ import { ValidateEmail } from '../shared/validators/email.validator';
 import { ValidatePhone } from '../shared/validators/phonel.validator';
 import { ValidateCpf } from '../shared/validators/cpf.validator';
 import { UserService } from '../user.service';
+import { validateHorizontalPosition } from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-register',
@@ -26,10 +27,18 @@ export class RegisterComponent implements OnInit {
     })
   }
 
+  users:any = [];
+
   ngOnInit() {
   /*  this.registerForm.patchValue({
       name: 'Matheus Cassiano'
     })*/
+
+    this.service.getAllUsers().then((users) => {
+      console.log(users);
+      this.users = users;
+    })
+
   }
 
   save(){

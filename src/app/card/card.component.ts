@@ -19,4 +19,11 @@ export class CardComponent implements OnInit {
     })
   }
 
+  validate(cpf:any){
+    this.service.validateUser(cpf).then((date) =>{
+      console.log(date);
+      location.reload();
+      });
+  }
+
 }
